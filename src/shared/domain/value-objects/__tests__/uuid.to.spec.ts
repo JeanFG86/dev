@@ -6,4 +6,9 @@ describe("Uuid Unit Tests", () => {
       new Uuid("error");
     }).toThrow(new InvalidUuidError());
   });
+
+  it("should create a valid uuid", () => {
+    const uuid = new Uuid();
+    expect(uuid.id).toBeDefined();
+  });
 });
