@@ -74,6 +74,20 @@ describe("Category Unit Tests", () => {
     });
   });
 
+  describe("category id fields", () => {
+    const arrange = [{ category_id: null }, { category_id: undefined }, { category_id: new Uuid() }];
+    it.each(arrange)("id = %j", ({ category_id }) => {
+      const category = new Category({
+        name: "Movie",
+        category_id: category_id as any,
+      });
+      expect(category.category_id).toBeInstanceOf(Uuid);
+      if (category_id instanceof Uuid) {
+        expect(category.category_id).toBe(category_id);
+      }
+    });
+  });
+
   test("should change name", () => {
     const category = Category.create({
       name: "Movie",
