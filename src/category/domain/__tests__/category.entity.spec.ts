@@ -130,4 +130,16 @@ describe("Category Unit Tests", () => {
     category.deactivate();
     expect(category.is_active).toBe(false);
   });
+
+  describe("Category Validator", () => {
+    it("should an invalid category with name property", () => {
+      expect(() => Category.create({ name: null })).containsErrorMessages({
+        name: [
+          "name should not be empty",
+          "name must be a string",
+          "name must be shorter than or equal to 255 characters",
+        ],
+      });
+    });
+  });
 });
