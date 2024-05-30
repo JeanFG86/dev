@@ -161,5 +161,11 @@ describe("Category Unit Tests", () => {
         description: ["description must be a string"],
       });
     });
+
+    it("should a invalid category using is_active property", () => {
+      expect(() => Category.create({ is_active: 5 } as any)).containsErrorMessages({
+        is_active: ["is_active must be a boolean value"],
+      });
+    });
   });
 });
