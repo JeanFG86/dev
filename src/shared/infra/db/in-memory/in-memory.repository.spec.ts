@@ -1,6 +1,6 @@
-import { Entity } from "../../domain/entity";
-import { ValueObject } from "../../domain/value-object";
-import { Uuid } from "../../domain/value-objects/uuid.vo";
+import { Entity } from "../../../domain/entity";
+import { ValueObject } from "../../../domain/value-object";
+import { Uuid } from "../../../domain/value-objects/uuid.vo";
 import { InMemoryRepository } from "./in-memory.repository";
 
 type StubEntityConstructor = {
