@@ -9,7 +9,7 @@ export class CategoryModel extends Model {
   @Column({ allowNull: false, type: DataType.STRING(255) })
   declare name: string;
 
-  @Column({ allowNull: false, type: DataType.STRING(255) })
+  @Column({ allowNull: true, type: DataType.STRING(255) })
   declare description: string | null;
 
   @Column({ allowNull: false, type: DataType.BOOLEAN })
